@@ -24,4 +24,6 @@ ActiveRecord::Schema.define(version: 20140302214244) do
     t.datetime "updated_at"
   end
 
+  add_index "fillups", ["odometer"], name: "index_fillups_on_odometer", unique: true
+
 end
