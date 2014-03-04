@@ -13,17 +13,20 @@
 
 ActiveRecord::Schema.define(version: 20140302214244) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "fillups", force: true do |t|
-    t.decimal  "odometer",   precision: 8, scale: 1
-    t.decimal  "price",      precision: 5, scale: 3
-    t.decimal  "volume",     precision: 5, scale: 3
-    t.datetime "date"
-    t.boolean  "missed"
-    t.boolean  "partial"
+    t.decimal  "odometer",   precision: 8, scale: 1,                                 null: false
+    t.decimal  "price",      precision: 5, scale: 3,                                 null: false
+    t.decimal  "volume",     precision: 5, scale: 3,                                 null: false
+    t.datetime "date",                               default: '2014-03-03 23:39:26', null: false
+    t.boolean  "missed",                             default: false
+    t.boolean  "partial",                            default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "fillups", ["odometer"], name: "index_fillups_on_odometer", unique: true
+  add_index "fillups", ["odometer"], name: "index_fillups_on_odometer", unique: true, using: :btree
 
 end
