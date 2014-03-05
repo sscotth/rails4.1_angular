@@ -54,6 +54,8 @@ GEM
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
+    haml (4.0.5)
+      tilt
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.0.3)
@@ -158,6 +160,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   guard
+  haml
   jbuilder (~> 2.0)
   jquery-rails
   pg

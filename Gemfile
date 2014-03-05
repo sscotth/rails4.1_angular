@@ -39,4 +39,4 @@ gem 'spring',        group: :development
 gem "rspec-rails", group: :test
 gem "guard", group: [:development, :test]
 gem "pg"
-# gem "haml"
+gem "haml"
