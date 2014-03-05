@@ -4,4 +4,8 @@ class Fillup < ActiveRecord::Base
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :volume, presence: true, numericality: { greater_than: 0 }
 
+  def total
+    self.volume * self.price
+  end
+
 end
