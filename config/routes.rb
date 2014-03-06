@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'main/index'
+  get 'main/' => 'main#index'
   get 'static_pages/index'
   root 'static_pages#index'
   resources :fillups
