@@ -1,2 +1,2 @@
-@IndexCtrl = ($scope) ->
-  $scope.title = "My Awesome Website!"
+@FillupApp.controller "IndexCtrl", ($scope) ->
+  $scope.title = "Rubular is Awesome"
