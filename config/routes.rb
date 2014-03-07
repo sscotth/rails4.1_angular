@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'main/' => 'main#index'
   get 'static_pages/index'
-  root 'static_pages#index'
+  root 'main#index'
   resources :fillups
 
   # The priority is based upon order of creation: first created -> highest priority.
