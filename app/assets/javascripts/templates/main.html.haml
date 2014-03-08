@@ -1,1 +1,6 @@
 %h2 List of Doom
+.row{"ng-repeat"=>"fillup in fillups"}
+    %h3 {{ fillup.date }}
+    %p Price: {{ fillup.price }}
+    %p Gallons: {{ fillup.volume }}
+    %p Total: {{ fillup.total }}
