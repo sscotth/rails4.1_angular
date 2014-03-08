@@ -1,2 +1,4 @@
-angular.module('FillupApp').controller "IndexCtrl", ($scope) ->
+FillupApp = angular.module('FillupApp')
+
+FillupApp.controller "IndexCtrl", ($scope) ->
   $scope.title = "Rubular is Awesome"
