@@ -2,4 +2,4 @@ FillupApp = angular.module('FillupApp', ['ngRoute','ngResource'])
 
 FillupApp.config ($routeProvider, $locationProvider) ->
   $locationProvider.html5Mode true
-  $routeProvider.otherwise templateUrl: "<%= asset_path('templates/main.html.haml') %>", controller: 'IndexCtrl'
+  $routeProvider.otherwise templateUrl: "<%= asset_path('templates/main.html') %>", controller: 'IndexCtrl'
