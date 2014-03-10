@@ -1,8 +1,8 @@
 FillupApp = angular.module('FillupApp')
 
-FillupApp.factory "fillupsRes", ($resource) ->
+FillupApp.factory "FillupsRes", ($resource) ->
   fillups: $resource('/fillups.json')
 
-FillupApp.controller "IndexCtrl", ($scope, fillupsRes) ->
+FillupApp.controller "IndexCtrl", ($scope, FillupsRes) ->
   $scope.title = "Rubular is Awesome"
-  $scope.fillups = fillupsRes.fillups.query({})
+  $scope.fillups = FillupsRes.fillups.query({})
