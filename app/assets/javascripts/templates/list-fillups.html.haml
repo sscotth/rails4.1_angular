@@ -1,6 +1,20 @@
-%h2 List of Doom
-.row{"ng-repeat"=>"fillup in fillups"}
-    %h3 {{ fillup.date }}
-    %p Price: {{ fillup.price }}
-    %p Gallons: {{ fillup.volume }}
-    %p Total: {{ fillup.total }}
+%h2 Table of Doom
+%table.table.table-hover
+  %thead
+    %tr
+      %th Odometer
+      %th Price
+      %th Volume
+      %th Date
+      %th Missed
+      %th Partial
+      %th Actions
+  %tbody
+    %tr{"ng-repeat"=>"fillup in fillups"}
+      %td {{ fillup.odometer }}
+      %td {{ fillup.price }}
+      %td {{ fillup.volume }}
+      %td {{ fillup.date }}
+      %td {{ fillup.missed }}
+      %td {{ fillup.partial }}
+      %td Do Stuff!
