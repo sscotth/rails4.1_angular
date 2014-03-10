@@ -1,5 +1,9 @@
 FillupApp = angular.module('FillupApp', ['ngRoute','ngResource'])
 
-FillupApp.config ($routeProvider, $locationProvider) ->
+FillupApp.config ($routeProvider, $locationProvider, $httpProvider) ->
   $locationProvider.html5Mode true
+  $routeProvider.when '/fillups/new', templateUrl: "<%= asset_path('templates/new-fillup.html') %>", controller: 'IndexCtrl'
   $routeProvider.otherwise templateUrl: "<%= asset_path('templates/main.html') %>", controller: 'IndexCtrl'
+
+  authToken = $("meta[name=\"csrf-token\"]").attr("content")
+  $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken
