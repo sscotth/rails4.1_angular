@@ -2,19 +2,25 @@
 %table.table.table-hover
   %thead
     %tr
-      %th Odometer
-      %th Price
-      %th Volume
-      %th Date
-      %th Missed
-      %th Partial
+      %th{"ng-click"=> "sortingOrder.property = 'odometer'; sortingOrder.descending = !sortingOrder.descending"} Odometer
+      %th{"ng-click"=> "sortingOrder.property = 'price'; sortingOrder.descending = !sortingOrder.descending"} Price
+      %th{"ng-click"=> "sortingOrder.property = 'volume'; sortingOrder.descending = !sortingOrder.descending"} Volume
+      %th{"ng-click"=> "sortingOrder.property = 'date'; sortingOrder.descending = !sortingOrder.descending"} Date
+      %th Modifiers
       %th Actions
   %tbody
-    %tr{"ng-repeat"=>"fillup in fillups"}
-      %td {{ fillup.odometer }}
-      %td {{ fillup.price }}
-      %td {{ fillup.volume }}
-      %td {{ fillup.date }}
-      %td {{ fillup.missed }}
-      %td {{ fillup.partial }}
-      %td Do Stuff!
+    %tr{"ng-repeat"=> "fillup in fillups | orderBy:predicate:sortingOrder.descending"}
+      %td {{ fillup.odometer | number }}
+      %td {{ fillup.price | number:3 }}
+      %td {{ fillup.volume | number:3 }}
+      %td {{ fillup.date | date}}
+      %td
+        %span.label.label-info{"ng-show"=>"fillup.partial"} P
+        %span.label.label-danger{"ng-show"=>"fillup.missed"} M
+      %td.actions
+        %a{href:'#', title: 'View'}
+          %span.glyphicon.glyphicon-eye-open
+        %a{href:'#', title: 'Edit'}
+          %span.glyphicon.glyphicon-edit
+        %a{href:'#', title: 'Remove'}
+          %span.glyphicon.glyphicon-remove

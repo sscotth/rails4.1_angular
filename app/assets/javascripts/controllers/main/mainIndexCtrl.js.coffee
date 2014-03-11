@@ -16,3 +16,13 @@ FillupApp.controller "IndexCtrl", ($scope, FillupsRes) ->
       window.location = "/"
     else
       alert 'not valid'
+
+  $scope.sortingOrder =
+    property: "odometer"
+    descending: true
+
+  $scope.predicate = (fillup) ->
+    strToNumFields = ["odometer","price","volume"]
+    value = fillup[$scope.sortingOrder.property]
+    value = parseInt value if strToNumFields.indexOf($scope.sortingOrder.property) isnt -1
+    value
