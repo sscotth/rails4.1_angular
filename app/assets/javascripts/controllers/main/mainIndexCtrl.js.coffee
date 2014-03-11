@@ -12,7 +12,7 @@ FillupApp.controller "IndexCtrl", ($scope, FillupsRes) ->
       fillup = new FillupsRes.fillups($scope.fillup)
       fillup.$save()
 
-      $scope.fillups.push(fillup)
+      $scope.fillups.push(fillup) # no ()
       window.location = "/"
     else
       alert 'not valid'
@@ -26,3 +26,11 @@ FillupApp.controller "IndexCtrl", ($scope, FillupsRes) ->
     value = fillup[$scope.sortingOrder.property]
     value = parseInt value if strToNumFields.indexOf($scope.sortingOrder.property) isnt -1
     value
+
+FillupApp.directive 'showOnHoverParent', ->
+  restrict: 'A',
+  link: (scope, element, attrs) ->
+    element.parent().bind 'mouseover', ->
+      $(element).fadeTo( 150, 1 );
+    element.parent().bind 'mouseleave', ->
+      $(element).fadeTo( 150, 0 );

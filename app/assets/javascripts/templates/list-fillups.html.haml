@@ -2,10 +2,18 @@
 %table.table.table-hover
   %thead
     %tr
-      %th{"ng-click"=> "sortingOrder.property = 'odometer'; sortingOrder.descending = !sortingOrder.descending"} Odometer
-      %th{"ng-click"=> "sortingOrder.property = 'price'; sortingOrder.descending = !sortingOrder.descending"} Price
-      %th{"ng-click"=> "sortingOrder.property = 'volume'; sortingOrder.descending = !sortingOrder.descending"} Volume
-      %th{"ng-click"=> "sortingOrder.property = 'date'; sortingOrder.descending = !sortingOrder.descending"} Date
+      %th{"ng-click"=>"sortingOrder.property = 'odometer'; sortingOrder.descending = !sortingOrder.descending"}
+        Odometer
+        %span.glyphicon.glyphicon-sort{"show-on-hover-parent"=>true}
+      %th{"ng-click"=>"sortingOrder.property = 'price'; sortingOrder.descending = !sortingOrder.descending"}
+        Price
+        %span.glyphicon.glyphicon-sort{"show-on-hover-parent"=>true}
+      %th{"ng-click"=>"sortingOrder.property = 'volume'; sortingOrder.descending = !sortingOrder.descending"}
+        Volume
+        %span.glyphicon.glyphicon-sort{"show-on-hover-parent"=>true}
+      %th{"ng-click"=>"sortingOrder.property = 'date'; sortingOrder.descending = !sortingOrder.descending"}
+        Date
+        %span.glyphicon.glyphicon-sort{"show-on-hover-parent"=>true}
       %th Modifiers
       %th Actions
   %tbody
