@@ -40,3 +40,5 @@ gem "rspec-rails", group: :test
 gem "guard", group: [:development, :test]
 gem "pg"
 gem "haml"
+gem "bootstrap-sass", "~> 3.1.1"
+gem 'bourbon'
