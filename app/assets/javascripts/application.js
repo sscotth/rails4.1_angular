@@ -15,3 +15,4 @@
 //= require bootstrap
 //= require main
 //= require_tree ./controllers/main
+//= require_tree ./services
