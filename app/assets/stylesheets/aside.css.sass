@@ -1,0 +1,95 @@
+aside
+  background-color : $aside-inverse-bg
+  float            : left
+  height           : calc(100% - 51px)
+  margin-top       : -19px
+  position         : fixed
+  width            : 300px
+  z-index          : 9999
+
+  .main-menu ul li
+    border-bottom : 1px solid lighten($aside-inverse-bg, 5%)
+    border-top    : 1px solid darken($aside-inverse-bg, 5%)
+
+    a
+      @include transition(background-color, color 100ms ease-in-out)
+      color       : $gray
+      display     : block
+      padding     : 8px 0 8px 16px
+      position    : relative
+      text-shadow : 0 2px 2px rgba(0, 0, 0, .25)
+
+      i.extra-margin
+        margin: 0 5px
+  ul
+    padding: 0
+
+  .sidebar-inner
+    border-right: 1px solid darken($aside-inverse-bg, 5%)
+
+  .main-menu ul
+    margin     : 0
+    list-style : none
+
+    li
+      &.active
+        border-top    : 1px solid $brand-primary
+        border-bottom : none
+        a
+          color      : white
+          background : $brand-primary
+
+      &:not(.active) a
+        &:hover
+          @include transition(all 500ms ease-in-out)
+
+        &:hover, &:focus
+          color      : white
+          background : darken(desaturate($brand-primary, 30%), 10%)
+
+      a
+        .menu-icon
+          font-size: 2.25rem
+
+        .text
+          font-size   : 2rem
+          margin-left : 10px
+
+@media (max-width: 767px)
+  aside
+    left: -300px
+    @include transition(all 500ms ease-in-out)
+
+    &.visible
+      left: 0
+      @include transition(all 200ms ease-in-out)
+
+    .main-menu ul li a
+      .text
+        font-size   : 2.25rem
+        margin-left : 10px
+
+      .menu-icon
+        font-size  : 2.5rem
+        margin-top : 30px
+
+@media (min-width: 768px) and (max-width: 1024px)
+  aside
+    width: 90px
+
+    .sidebar-inner .main-menu ul li a
+      padding    : 10px 0
+      text-align : center
+
+      .menu-icon
+        display   : block
+        font-size : 3rem
+
+      .text
+        display   : block
+        font-size : 1.3rem
+        margin    : 0
+
+@media (max-width: 1024px)
+  aside .size-toggle
+    display: none

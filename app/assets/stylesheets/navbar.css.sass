@@ -1,0 +1,26 @@
+.navbar-inverse
+
+.navbar-inverse
+  &:focus .navbar-toggle:focus, &:hover .navbar-toggle:hover
+    background-color : lighten($aside-inverse-bg, 2%)
+    color            : white
+
+  &:hover .navbar-toggle:hover
+    @include transition(all 500ms ease-in-out)
+
+  .navbar-toggle
+    color         : $gray
+    float         : left
+    line-height   : 0
+    margin        : 0
+    padding       : 9px 16px
+
+#toggle-icon
+  font-size: 3rem
+
+.navbar-brand
+  font-family : $font-family-logo
+  font-size   : 3.5rem
+  margin-right: 50px
+  &:hover
+    @include transition(all 500ms ease-in-out)

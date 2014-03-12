@@ -1,0 +1,38 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top{"ng-controller" => "HeaderCtrl"}
+  .navbar-header
+    %button.navbar-toggle{type:"button", "data-toggle" => "collapse",
+      "data-target" => "#bs-example-navbar-collapse-1",
+      "ng-click" => "asideVisibleFlip()"}
+      %i.entypo-menu#toggle-icon
+    %a.navbar-brand{href: "/"} Rubulage
+  .container-fluid
+    .collapse.navbar-collapse
+      %a.button.btn.btn-primary.navbar-btn{href: "/fillups/new"}
+        %i.entypo-droplet.menu-icon.extra-margin
+        New Fillup
+      %p.navbar-text.navbar-right
+        %a.navbar-link{href: "#"} Scott Humphries
+
+%aside{"ng-controller" => "AsideCtrl",
+  "ng-class" => "{ 'visible' : asideVisible }"}
+  .sidebar-inner
+    .main-menu
+      %ul
+        %li.active
+          %a{href: "/"}
+            %i.entypo-gauge.menu-icon
+            %span.text Dashboard
+        %li.visible-xs
+          %a{href: "/fillups"}
+            %i.entypo-droplet.menu-icon.extra-margin
+            %span.text New Fillup
+        %li
+          %a{href: "/fillups"}
+            %i.entypo-water.menu-icon
+            %span.text Fillups
+        %li
+          %a{href: "javascript:void(0);"}
+            %i.entypo-chart-line.menu-icon
+            %span.text Stats
+
+.container-fluid{"ng-controller" => "IndexCtrl", "ng-view" => true}

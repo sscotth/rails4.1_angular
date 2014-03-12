@@ -1,17 +1,17 @@
 %h2 Table of Doom
-%table.table.table-hover
+%table.table.table-condensed.table-hover
   %thead
     %tr
-      %th{"ng-click"=>"sortingOrder.property = 'odometer'; sortingOrder.descending = !sortingOrder.descending"}
+      %th.sortable{"ng-click"=>"sortingOrder.property = 'odometer'; sortingOrder.descending = !sortingOrder.descending"}
         Odometer
         %span.glyphicon.glyphicon-sort{"show-on-hover-parent"=>true}
-      %th{"ng-click"=>"sortingOrder.property = 'price'; sortingOrder.descending = !sortingOrder.descending"}
+      %th.sortable{"ng-click"=>"sortingOrder.property = 'price'; sortingOrder.descending = !sortingOrder.descending"}
         Price
         %span.glyphicon.glyphicon-sort{"show-on-hover-parent"=>true}
-      %th{"ng-click"=>"sortingOrder.property = 'volume'; sortingOrder.descending = !sortingOrder.descending"}
+      %th.sortable{"ng-click"=>"sortingOrder.property = 'volume'; sortingOrder.descending = !sortingOrder.descending"}
         Volume
         %span.glyphicon.glyphicon-sort{"show-on-hover-parent"=>true}
-      %th{"ng-click"=>"sortingOrder.property = 'date'; sortingOrder.descending = !sortingOrder.descending"}
+      %th.sortable{"ng-click"=>"sortingOrder.property = 'date'; sortingOrder.descending = !sortingOrder.descending"}
         Date
         %span.glyphicon.glyphicon-sort{"show-on-hover-parent"=>true}
       %th Modifiers
